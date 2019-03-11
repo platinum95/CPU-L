@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>cpuIconxcf.png</file>
+    </qresource>
+</RCC>
