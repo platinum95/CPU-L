@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>cpuIconxcf.png</file>
+        <file>TitleBox.qml</file>
+        <file>Divider.qml</file>
     </qresource>
 </RCC>

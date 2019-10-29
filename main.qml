@@ -16,20 +16,25 @@ Window {
 
     property int currentIndex: 0
 
+    RowLayout{
+        id: mainWindowRowLayout
+        anchors.fill: parent
+        spacing: 0
+
+
 
     Rectangle {
         id: rectangle1
         width: 100
         color: "#323232"
         border.width: 0
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
+        Layout.fillHeight: true
+       // anchors.top: parent.top
+       // anchors.bottom: parent.bottom
+       // Layout.alignment: left
 
         ColumnLayout {
             id: column1
-            x: 0
-            y: 0
-
             anchors.fill: parent
             spacing: 2
 
@@ -55,7 +60,7 @@ Window {
 
                 Layout.rightMargin: checked ? 0 : 2
 
-                Layout.fillWidth: true //checked ? true : false
+                Layout.fillWidth: true
                 Layout.fillHeight: true
                 checked: true
                 display: AbstractButton.IconOnly
@@ -65,23 +70,26 @@ Window {
                         name: "Hovering"
                         PropertyChanges{
                             target: cpuBackground
-                            color: parent.checked ? "#707070" : "#666666"
+                            color: parent.checked ? "#303030" : "#666666"
                         }
                     },
+
                     State{
                         name: ""
                         PropertyChanges{
                             target: cpuBackground
-                            color: parent.checked ? "#707070" : "#444444"
+                            color: parent.checked ? "#303030" : "#444444"
                         }
                     }
 
+
                 ]
+
                 transitions: [
                     Transition{
                         from: "";
                         to: "Hovering"
-                        ColorAnimation{ duration: 200 }
+                        ColorAnimation{  duration: 200 }
                     },
                     Transition{
                         from: "Hovering";
@@ -107,10 +115,11 @@ Window {
                     id: cpuBackground
                     anchors.fill: parent
                     opacity: 1.0//cpuButton.checked ? 0.5 : 0.1
-                    color: parent.checked ? "#707070" : "#444444"
+                    color: parent.checked ? "#303030" : "#444444"
                 }
 
             }
+
 
             TabButton {
                 id: ramButton
@@ -312,53 +321,112 @@ Window {
                     color: gpuButton.checked ? "#707070" : "#444444"
                 }
             }
+
         }
     }
-
-
 
     StackLayout {
         id: stackView
         objectName: "mainStackView"
-        x: 100
-        y: 0
-        width: 540
-        height: 480
+        //x: 100
+        //y: 0
+
+        Layout.fillHeight: true
 
         currentIndex: window.currentIndex
 
-        Rectangle{
-            color: "#707070"
-            visible: true
+        TitleBox{
+            titleString: "CPU Information"
 
-            ColumnLayout {
-                id: columnLayout
-                anchors.fill: parent
+            GridLayout {
+                id: grid
+                columns: 3
+                rows: 4
+                height: parent.height
+                width: parent.width
+                columnSpacing: 4
+                rowSpacing: 4
 
-                MenuBar: MenuBar{
-                    id: test
+
+                TitleBox{
+                    titleString: "Vendor"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+
+                }
+                TitleBox{
+                    titleString: "uArch"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+
+                }
+                TitleBox{
+                    titleString: "ID Codes"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
 
                 }
 
-                Row {
-                    id: row
-                    Layout.fillWidth: true
+                TitleBox{
+                    titleString: "Cores"
                     Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+
+                }
+                TitleBox{
+                    titleString: "Threads"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+
+                }
+                TitleBox{
+                    titleString: "Clock"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+
                 }
 
-                Row {
-                    id: row1
-                    Layout.fillWidth: true
+                TitleBox{
+                    titleString: "L1 Cache"
                     Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+
+                }
+                TitleBox{
+                    titleString: "L2 Cache"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+                }
+                TitleBox{
+                    titleString: "L3 Cache"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
                 }
 
-                Row {
-                    id: row2
+                TitleBox{
+                    titleString: "CPU Extensions"
                     Layout.fillWidth: true
+                    Layout.columnSpan: 3
                     Layout.fillHeight: true
+                    color: "#505050"
+
                 }
             }
+
+
+
         }
+
+
         Rectangle{
             color: "#707070"
             visible: false
@@ -369,5 +437,6 @@ Window {
         Rectangle{
             color: "#707070"
         }
+    }
     }
 }
