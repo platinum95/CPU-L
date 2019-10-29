@@ -75,25 +75,23 @@ Window {
                     },
 
                     State{
-                        name: ""
+                        name: "Notvering"
                         PropertyChanges{
                             target: cpuBackground
                             color: parent.checked ? "#303030" : "#444444"
                         }
                     }
-
-
                 ]
 
                 transitions: [
                     Transition{
-                        from: "";
+                        from: "Notvering";
                         to: "Hovering"
                         ColorAnimation{  duration: 200 }
                     },
                     Transition{
                         from: "Hovering";
-                        to: ""
+                        to: "Notvering"
                         ColorAnimation{ duration: 200 }
                     }
 
@@ -146,7 +144,7 @@ Window {
                         }
                     },
                     State{
-                        name: ""
+                        name: "Notvering"
                         PropertyChanges{
                             target: ramBackground
                             color: parent.checked ? "#707070" : "#444444"
@@ -156,13 +154,13 @@ Window {
                 ]
                 transitions: [
                     Transition{
-                        from: "";
+                        from: "Notvering";
                         to: "Hovering"
                         ColorAnimation{ duration: 200 }
                     },
                     Transition{
                         from: "Hovering";
-                        to: ""
+                        to: "Notvering"
                         ColorAnimation{ duration: 200 }
                     }
 
@@ -215,7 +213,7 @@ Window {
                         }
                     },
                     State{
-                        name: ""
+                        name: "Notvering"
                         PropertyChanges{
                             target: moboBackground
                             color: parent.checked ? "#707070" : "#444444"
@@ -225,13 +223,13 @@ Window {
                 ]
                 transitions: [
                     Transition{
-                        from: "";
+                        from: "Notvering";
                         to: "Hovering"
                         ColorAnimation{ duration: 200 }
                     },
                     Transition{
                         from: "Hovering";
-                        to: ""
+                        to: "Notvering"
                         ColorAnimation{ duration: 200 }
                     }
 
@@ -277,7 +275,7 @@ Window {
                         }
                     },
                     State{
-                        name: ""
+                        name: "Notvering"
                         PropertyChanges{
                             target: gpuBackground
                             color: parent.checked ? "#707070" : "#444444"
@@ -287,13 +285,13 @@ Window {
                 ]
                 transitions: [
                     Transition{
-                        from: "";
+                        from: "Notvering";
                         to: "Hovering"
                         ColorAnimation{ duration: 200 }
                     },
                     Transition{
                         from: "Hovering";
-                        to: ""
+                        to: "Notvering"
                         ColorAnimation{ duration: 200 }
                     }
 
@@ -438,5 +436,7 @@ Window {
             color: "#707070"
         }
     }
+
+
     }
 }
