@@ -16,6 +16,8 @@ SOURCES += \
         main.cpp \
     myclass.cpp
 
+LIBS += -L/usr/local/lib -lgfxinfo
+
 RESOURCES += qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

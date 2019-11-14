@@ -1,0 +1,20 @@
+[
+  {
+    "directory": "/home/platinum95/code/cpu-l/cpu-l-lib/build",
+    "command": "c++ -Igfxinfo@sha -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -fPIC -MD -MQ 'gfxinfo@sha/gfxinfo.cpp.o' -MF 'gfxinfo@sha/gfxinfo.cpp.o.d' -o 'gfxinfo@sha/gfxinfo.cpp.o' -c ../gfxinfo.cpp",
+    "file": "../gfxinfo.cpp",
+    "output": "gfxinfo@sha/gfxinfo.cpp.o"
+  },
+  {
+    "directory": "/home/platinum95/code/cpu-l/cpu-l-lib/build",
+    "command": "c++ -Igfxinfo@sha -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -fPIC -MD -MQ 'gfxinfo@sha/glxinfo_common_lib.cpp.o' -MF 'gfxinfo@sha/glxinfo_common_lib.cpp.o.d' -o 'gfxinfo@sha/glxinfo_common_lib.cpp.o' -c ../glxinfo_common_lib.cpp",
+    "file": "../glxinfo_common_lib.cpp",
+    "output": "gfxinfo@sha/glxinfo_common_lib.cpp.o"
+  },
+  {
+    "directory": "/home/platinum95/code/cpu-l/cpu-l-lib/build",
+    "command": "c++ -Icpu-l-lib_test@exe -I. -I.. -I/usr/local/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'cpu-l-lib_test@exe/cpu-l-lib_test.cpp.o' -MF 'cpu-l-lib_test@exe/cpu-l-lib_test.cpp.o.d' -o 'cpu-l-lib_test@exe/cpu-l-lib_test.cpp.o' -c ../cpu-l-lib_test.cpp",
+    "file": "../cpu-l-lib_test.cpp",
+    "output": "cpu-l-lib_test@exe/cpu-l-lib_test.cpp.o"
+  }
+]

@@ -1,0 +1,44 @@
+`vulkaninfo | grep VkPhysicalDeviceDriverProperties -A 10`
+AMDVLK:
+VkPhysicalDeviceDriverProperties:
+=================================
+	driverID   = 2
+	driverName = AMD open-source driver
+	driverInfo = 
+	conformanceVersion:
+		major    = 1
+		minor    = 1
+		subminor = 2
+		patch    = 3
+
+Mesa RADV:
+VkPhysicalDeviceDriverProperties:
+=================================
+	driverID   = 3
+	driverName = radv
+	driverInfo = Mesa 19.2.2 (LLVM 9.0.0)
+	conformanceVersion:
+		major    = 1
+		minor    = 1
+		subminor = 2
+		patch    = 0
+
+*********************************************8
+
+`glxinfo -B`
+Mesa:
+OpenGL vendor string: X.Org
+OpenGL renderer string: Radeon RX 580 Series (POLARIS10, DRM 3.33.0, 5.3.6-1-MANJARO, LLVM 9.0.0)
+OpenGL core profile version string: 4.5 (Core Profile) Mesa 19.2.2
+OpenGL core profile shading language version string: 4.50
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 4.5 (Compatibility Profile) Mesa 19.2.2
+OpenGL shading language version string: 4.50
+OpenGL context flags: (none)
+OpenGL profile mask: compatibility profile
+
+OpenGL ES profile version string: OpenGL ES 3.2 Mesa 19.2.2
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
+

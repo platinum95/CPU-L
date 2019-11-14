@@ -1,0 +1,2 @@
+/home/platinum95/code/cpu-l/cpu-l-lib/build/meson-private/cmake_libgfxinfo/CMakeFiles/rebuild_cache.dir
+/home/platinum95/code/cpu-l/cpu-l-lib/build/meson-private/cmake_libgfxinfo/CMakeFiles/edit_cache.dir

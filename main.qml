@@ -3,6 +3,9 @@ import QtQuick.Window 2.10
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Dialogs.qml 1.0
+import QtQuick.Scene2D 2.9
+import QtQuick.Shapes 1.11
+import QtGamepad 1.0
 
 Window {
     id: window
@@ -325,19 +328,19 @@ Window {
 
     StackLayout {
         id: stackView
+        currentIndex: 3
         objectName: "mainStackView"
         //x: 100
         //y: 0
 
         Layout.fillHeight: true
 
-        currentIndex: window.currentIndex
 
         TitleBox{
             titleString: "CPU Information"
 
             GridLayout {
-                id: grid
+                id: cpuInfoGrid
                 columns: 3
                 rows: 4
                 height: parent.height
@@ -419,16 +422,186 @@ Window {
 
                 }
             }
+        }
+
+        TitleBox{
+            titleString: "RAM Information"
+
+            GridLayout {
+                id: ramInfoGrid
+                columns: 3
+                rows: 4
+                height: parent.height
+                width: parent.width
+                columnSpacing: 4
+                rowSpacing: 4
+            }
+        }
+
+        TitleBox{
+            titleString: "Motherboard Information"
+
+            GridLayout {
+                id: moboInfoGrid
+                columns: 3
+                rows: 4
+                height: parent.height
+                width: parent.width
+                columnSpacing: 4
+                rowSpacing: 4
+            }
+        }
+
+        TitleBox{
+            titleString: "GPU Information"
+            id: gpuPageContainer
+            objectName: "gpuPageContainer"
+            height: parent.height
+            width: parent.width
+
+            GridLayout {
+                id: gpuInfoGrid
+                columns: 1
+                rows: 3
+                height: parent.height
+                width: parent.width
+                columnSpacing: 4
+                rowSpacing: 4
 
 
+                TitleBox{
+                    id: glDriverBox
+                    titleString: "OpenGL Driver"
+                    objectName: "glDriverBox"
 
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+
+                    Text{
+                        id: glDriverText
+                        objectName: "glDriverText"
+                        color: "#ffffff"
+                        text: infoBox.titleString
+                        anchors.fill: parent
+
+                        font.pointSize: 16
+                        fontSizeMode: Text.VerticalFit
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+
+                }
+                TitleBox{
+                    id: vkDriverBox
+                    titleString: "Vulkan Driver"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+                    Text{
+                        id: vkDriverText
+                        objectName: "vkDriverText"
+                        color: "#ffffff"
+                        text: infoBox.titleString
+                        anchors.fill: parent
+
+                        font.pointSize: 16
+                        fontSizeMode: Text.VerticalFit
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+
+                }
+                TitleBox{
+                    id: kernelInfoBox
+                    titleString: "Kernel"
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    color: "#505050"
+                    Text{
+                        id: kernelText
+                        objectName: "kernelText"
+                        color: "#ffffff"
+                        text: infoBox.titleString
+                        anchors.fill: parent
+
+                        font.pointSize: 16
+                        fontSizeMode: Text.VerticalFit
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+
+                }
+
+                PathView {
+                    id: pathView
+                    x: 0
+                    y: 0
+                    width: 250
+                    height: 130
+                    delegate: Column {
+                        spacing: 5
+                        Rectangle {
+                            width: 40
+                            height: 40
+                            color: colorCode
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+
+                        Text {
+                            x: 5
+                            text: name
+                            font.bold: true
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+                    }
+                    path: Path {
+                        startX: 120
+                        PathQuad {
+                            x: 120
+                            y: 25
+                            controlY: 75
+                            controlX: 260
+                        }
+
+                        PathQuad {
+                            x: 120
+                            y: 100
+                            controlY: 75
+                            controlX: -20
+                        }
+                        startY: 100
+                    }
+                    model: ListModel {
+                        ListElement {
+                            name: "Grey"
+                            colorCode: "grey"
+                        }
+
+                        ListElement {
+                            name: "Red"
+                            colorCode: "red"
+                        }
+
+                        ListElement {
+                            name: "Blue"
+                            colorCode: "blue"
+                        }
+
+                        ListElement {
+                            name: "Green"
+                            colorCode: "green"
+                        }
+                    }
+                }
+            }
         }
 
 
-        Rectangle{
-            color: "#707070"
-            visible: false
-        }
+//        Rectangle{
+//            color: "#707070"
+//            visible: false
+//        }
         Rectangle{
             color: "#707070"
         }
@@ -440,3 +613,10 @@ Window {
 
     }
 }
+
+/*##^##
+Designer {
+    D{i:50;invisible:true}D{i:49;invisible:true}D{i:62;invisible:true}D{i:61;invisible:true}
+D{i:63;invisible:true}
+}
+##^##*/
